@@ -1,42 +1,73 @@
-# fullstack
-ejercicios curso fullstack
+ejercicio 1.1
+Usa Vite para inicializar una nueva aplicación. Modifica main.jsx para que coincida con lo siguiente
+import ReactDOM from 'react-dom/client'
 
+import App from './App'
 
-Vite es una herramienta de compilación y tooling que tiene como objetivo
-proporcionar una experiencia de desarrollo más rápida y ágil para proyectos web modernos
+ReactDOM.createRoot(document.getElementById('root')).render(<App />)
 
-Consta de dos partes principales:
+y App.jsx para que coincida con lo siguiente
 
-Un servidor de desarrollo que proporciona mejoras enriquecidas de funcionalidades sobre módulos
-ES nativos, por ejemplo Hot Module Replacement (HMR) extremadamente rápido.
+const App = () => {
+  const course = 'Half Stack application development'
+  const part1 = 'Fundamentals of React'
+  const exercises1 = 10
+  const part2 = 'Using props to pass data'
+  const exercises2 = 7
+  const part3 = 'State of a component'
+  const exercises3 = 14
 
-Un comando de compilación que empaqueta tu código con Rollup, preconfigurado para generar 
-recursos estáticos altamente optimizados para producción.
+  return (
+    <div>
+      <h1>{course}</h1>
+      <p>
+        {part1} {exercises1}
+      </p>
+      <p>
+        {part2} {exercises2}
+      </p>
+      <p>
+        {part3} {exercises3}
+      </p>
+      <p>Number of exercises {exercises1 + exercises2 + exercises3}</p>
+    </div>
+  )
+}
 
-para crear la estructura de carpetas y configuracion necesarias para iniciar un proyecto 
-se tiene que ir al directorio en donde se va a ubicar nuestro proyecto y escribir el siguiente codigo en la terminal
+export default App
 
-    npm create vite@latest nombre-de-la-app -- --template react
+y elimina los archivos adicionales App.css, y index.css, también elimina el directorio assets.
 
-despues abrir la carpeta del proyecto e instalar npm 
+Desafortunadamente, toda la aplicación está en el mismo componente.
+Refactoriza el código para que conste de tres componentes nuevos: Header, Content y Total. 
+Todos los datos aún residen en el componente App, que pasa los datos necesarios a cada componente mediante props. Header se encarga de mostrar el nombre del curso, 
+Content muestra las partes y su número de ejercicios y Total muestra el número total de ejercicios.
 
-    cd nombre-de-la-app
-    npm install
+Define los nuevos componentes en el archivo App.jsx.
 
-y ahora se ejecutará el servidor de desarrollo
+El cuerpo del componente App será aproximadamente como el siguiente:
+const App = () => {
+  // const-definitions
 
-    npm run dev 
+  return (
+    <div>
+      <Header course={course} />
+      <Content ... />
+      <Total ... />
+    </div>
+  )
+}
+  
+ejercicio 1.2
 
-imprimirá en la consola lo siguiente:
-      VITE v5.3.0  ready in 307 ms
+Refactoriza el componente Content para que no muestre ningún nombre de partes o su número de ejercicios por sí mismo. En su lugar, solo representa tres componentes Part de los cuales cada uno representa el nombre y el número de ejercicios de una parte.
 
-    ➜  Local:   http://localhost:5173/
-    ➜  Network: use --host to expose
-    ➜  press h + enter to show help
-
-quiere decir que se ejecuta en el puerto 5173 por defecto
-
-abrir un explorador con la direccion 
-http://localhost:5173/
-
-y dentro de la carpeta src abrir el archivo  main.jsx
+const Content = ... {
+  return (
+    <div>
+      <Part .../>
+      <Part .../>
+      <Part .../>
+    </div>
+  )
+}
