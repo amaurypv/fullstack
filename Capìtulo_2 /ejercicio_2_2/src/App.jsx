@@ -37,8 +37,19 @@ const Course=({course})=>{
       <ul>
         {course['parts'].map(parte=>
           <li key={parte.id}>{parte.name} {parte.exercises}</li>)}
-      </ul>      
+      </ul>
+      <Sumatoria course={course}/>
     </div>
+  )
+}
+
+//usar una funcion en donde se sumen todos los ejercicios del curso. 
+const Sumatoria=({course})=>{
+  //
+  return(
+    <>
+      <h3>Total of {course['parts'].reduce((acc,arr)=>acc+arr.exercises,0)} exercises </h3>
+    </>
   )
 }
 
