@@ -1,11 +1,13 @@
 import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
 
 function App() {
   const [persons, setPersons] = useState([
     { name: 'Arto Hellas' ,
       id:1}
   ]) 
-  const [newName, setNewName] = useState('Agrega un contacto')
+  const [newName, setNewName] = useState('Agrega')
   //esta es la funcion que se va a ejecutar cada vez que se envíe el formulario 
   //por lo que debe de ir como un argumento dentro del elemento form
   //como onSubmit={} ya que queremos que se ejecute cuando se envie el formulario
@@ -19,8 +21,14 @@ function App() {
       name: newName,
       id:persons.length+1
     } 
-    //se va a definir el nuevo estado de personas
-    setPersons(persons.concat(nuevoContacto))
+    //si la persona ya se encuentra en la lista enviar un mensaje de alerta
+    //.some envia false o true si se cumple la condicion
+    //en este caso se hace un recorrido por todo el array persons
+    //si encuentra un elemento que cumpla con la condicion arroja un true
+    const existe=persons.some(persona=>persona.name===newName)
+    //se pone una condicion si existe es true entonces mande una alerta
+    //si es false entonces se agrega el contactoNuevo al estado persons
+    existe?alert(newName +' ya esta en la lista'):setPersons(persons.concat(nuevoContacto))
     //lo que queremos que aparezca en el input
     setNewName('Nuevo contacto')
   }
