@@ -2,9 +2,10 @@ import { useState } from 'react'
 
 function App() {
   const [persons, setPersons] = useState([
-    { name: 'Arto Hellas',
-      telefono:123456789,
-      id:1}
+    { name: 'Arto Hellas',telefono:123456789,id:1},
+    { name: 'Ada Lovelace', telefono: '39-44-5323523', id: 2 },
+    { name: 'Dan Abramov', telefono: '12-43-234345', id: 3 },
+    { name: 'Mary Poppendieck', telefono: '39-23-6423122', id: 4 }
   ]) 
   const [newName, setNewName] = useState('Agrega un nombre')
   //se va agregar un input en donde se agrege el numero de telefono 
