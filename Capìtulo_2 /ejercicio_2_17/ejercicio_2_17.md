@@ -1,0 +1,1 @@
+enviar un mensaje que indique que un contacto ya habia sido eliminado antes (error 404)

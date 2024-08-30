@@ -1,0 +1,10 @@
+const Lista=({persona,eliminar})=>{
+    return(
+        <div>
+             <li key={persona.key}>{persona.name} {persona.telefono} <button onClick={eliminar}>Eliminar</button> </li>
+        </div>
+    )
+
+}
+
+export default Lista

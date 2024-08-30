@@ -1,0 +1,1 @@
+agregar un boton al lado de cada contacto que diga eliminar y se elimine el contacto de la lista y del servidor
