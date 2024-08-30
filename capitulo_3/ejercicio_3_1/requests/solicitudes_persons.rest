@@ -1,0 +1,2 @@
+###para obtener todos los contactos
+GET http://localhost:3001/api/persons

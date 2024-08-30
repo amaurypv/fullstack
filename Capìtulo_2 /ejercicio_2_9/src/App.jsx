@@ -1,5 +1,5 @@
-import { useState } from 'react'
-
+import { useState,useEffect } from 'react'
+import axios from 'axios'
 function App() {
   const [persons, setPersons] = useState([
     { name: 'Arto Hellas',telefono:123456789,id:1},
@@ -58,7 +58,7 @@ function App() {
         filtrar por <input  onChange={buscar}/>
         {/* se genera una lista con los contactos filtrados que coincidan con el estado busqueda
         se hace un map para recorrer el estado personas y mostrar solo los nombres que coincidan
-        con la busqueda*/} */
+        con la busqueda*/} 
         <ul>
           {personasFiltradas.map(persona=>
             <li key={persona.id}>{persona.name} {persona.telefono}</li>)}
