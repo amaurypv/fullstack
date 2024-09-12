@@ -1,0 +1,17 @@
+### para obtener todos los datos
+GET http://localhost:3001/api/persons
+
+###para obtener informacion del servidor
+GET http://localhost:3001/info
+
+### para eliminar un usuario en especifico
+DELETE http://localhost:3001/api/persons/4
+
+### para añadir un elemento
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{  
+    "name":"ariel",
+    "number":"44211555"
+}
