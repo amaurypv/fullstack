@@ -1,0 +1,26 @@
+[{
+  "_id": {
+    "$oid": "66f6e9611e6dbd5d0e75e70a"
+  },
+  "title": "prueba"
+},
+{
+  "_id": {
+    "$oid": "66f6ea289e82f7263c3e4849"
+  },
+  "title": "String",
+  "author": "String",
+  "url": "String",
+  "likes": 3,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f72096281213404e604efb"
+  },
+  "title": "prueba 2",
+  "author": "prueba2",
+  "url": "www.wwww",
+  "likes": 5,
+  "__v": 0
+}]
